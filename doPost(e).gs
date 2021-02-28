@@ -6,7 +6,7 @@ function doPost(e) {
   //テキスト内容によって制御
   try {
     const res = e.postData.getDataAsString();
-    postLog(res);
+    console.log(res);
     const event = JSON.parse(res).events[0];
 
     switch (event.type) {
@@ -19,10 +19,10 @@ function doPost(e) {
         getPostback(event);
         break;
       default:
-        postLog(res);
+        console.log(res);
         break;
     }
   } catch (e) {
-    postLog(e);
+    console.log(e);
   }
 }
